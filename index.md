@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 高频面试题
-      link: /markdown-examples
+      link: /about/
     - theme: alt
       text: 知识笔记集锦
       link: /api-examples
