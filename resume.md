@@ -8,6 +8,8 @@
 
 ## 技术栈
 
+熟悉鸿蒙基础开发,拥有官方 HarmonyOS 应用开发者基础认证 证书
+
 ### 后端
 
 NodeJs: nestJs + typeorm + mysql + es

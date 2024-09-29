@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const res = {
+        name: "张三",
+      };
+      function fun(a, b, c) {
+        console.log(this);
+        console.log(a, b, c);
+      }
+
+      // fun.call(res);
+      Function.prototype.myCall = function (context, ...args) {
+        // 如果 context 为 null 或 undefined，指向全局对象
+        context = context || globalThis;
+        // 将当前函数（this）赋值给 context 对象的一个属性
+        context.fn = this;
+        // 调用该函数并传入参数
+        const result = context.fn(...args);
+        // 删除该属性以避免污染
+        delete context.fn;
+        // 返回函数的执行结果
+        return result;
+      };
+      fun.myCall(res, 1, 2, 3);
+    </script>
+  </body>
+</html>
