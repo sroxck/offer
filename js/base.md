@@ -16,11 +16,34 @@
 
 ## JavaScript 有哪些数据类型，它们的区别？
 
+八大类型:
+
+`string,number,boolean,null,undefined,symbol,bigInt,object(array,function,date,regexp,error)`
+
+- 基本数据类型: string,number,boolean,null,undefined,symbol,bigInt
+- 引用数据类型: object(array,function,date,regexp,error)
+
 ## 数据类型检测的方式有哪些
+
+typeof: 可以判断除了 null 的基本数据类型,引用数据类型除了 function 都会返回 object
+
+缺点除了函数,其他对象类型都会返回 object,包括 null,无法判断是不是 array,date 之类的
+instanceof 即只能用于判断引用类型，对于原始类型无能为力
+当涉及到具体类或构造函数的实例判断时，instanceof 关键字就显得尤为重要。它通过检查一个对象在其原型链上是否能找到某个构造函数的 prototype 属性，从而判断该对象是否属于某个特定的类或由某个构造函数创建。这种方法特别适用于复杂的面向对象编程场景，能够准确识别对象的继承关系。
+
+Object.prototype.toString.call() 一般这个方法用的比较多,可以判断出所有的类型
 
 ## 判断数组的方式有哪些
 
+- Array.isArray()
+- instanceof
+- Object.prototype.toString.call()
+
 ## null 和 undefined 区别
+
+- undefined 表示未定义，表示一个变量声明但未初始化，或者一个函数声明但未返回值
+  > 有什么实际用处: http 请求的时候可以将不需要的属性设置为 undefined,delete 会有心智负担,破坏对象结构,过滤需要创建一个新变量还需要通过 js 计算,会有性能开销,所以用 undefined 比较合
+- null 表示空值，表示一个变量没有值，或者一个对象没有属性
 
 ## intanceof 操作符的实现原理及实现
 
@@ -52,6 +75,33 @@ const 保证的并不是变量的值不能改动，而是变量指向的那个�
 但对于引用类型的数据（主要是对象和数组）来说，变量指向数据的内存地址，保存的只是一个指针，const 只能保证这个指针是固定不变的，至于它指向的数据结构是不是可变的，就完全不能控制了。
 
 ## 箭头函数与普通函数的区别
+
+1. 语法更简洁:
+
+   - 如果没有参数,可以直接写空括号 ()
+   - 只有一个参数时可以省略括号
+   - 多个参数用逗号分隔
+   - 函数体只有一条返回语句时可以省略大括号和 return
+   - 不需要返回值且只有一条语句时,可以在语句前加 void 关键字
+
+2. 没有自己的 this:
+
+   - 箭头函数不会创建自己的 this,而是继承上一层作用域的 this
+   - this 指向在定义时就确定,之后不会改变
+
+3. 继承的 this 指向不变:
+
+   - 即使作为对象方法调用,this 也不会指向该对象
+
+4. 不能通过 call/apply/bind 改变 this 指向
+
+5. 不能作为构造函数使用
+
+6. 没有自己的 arguments 对象
+
+7. 没有 prototype 属性
+
+8. 不能用作 Generator 函数,不能使用 yield 关键字
 
 ### 箭头函数比普通函数更加简洁
 

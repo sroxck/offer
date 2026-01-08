@@ -150,19 +150,19 @@ pending -> rejected：Rejected（已拒绝）
 
 注意：一旦从进行状态变成为其他状态就永远不能更改状态了。
 
-### Promise 的特点：
+### Promise 的特点
 
 1. 对象的状态不受外界影响。promise 对象代表一个异步操作，有三种状态，pending（进行中）、fulfilled（已成功）、rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态，这也是 promise 这个名字的由来——“承诺”；
 
 2. 一旦状态改变就不会再变，任何时候都可以得到这个结果。promise 对象的状态改变，只有两种可能：从 pending 变为 fulfilled，从 pending 变为 rejected。这时就称为 resolved（已定型）。如果改变已经发生了，你再对 promise 对象添加回调函数，也会立即得到这个结果。这与事件（event）完全不同，事件的特点是：如果你错过了它，再去监听是得不到结果的。
 
-### Promise 的缺点：
+### Promise 的缺点
 
 1. 无法取消 Promise，一旦新建它就会立即执行，无法中途取消。
 2. 如果不设置回调函数，Promise 内部抛出的错误，不会反应到外部。
 3. 当处于 pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
-### 总结：
+### 总结
 
 Promise 对象是异步编程的一种解决方案，最早由社区提出。Promise 是一个构造函数，接收一个函数作为参数，返回一个 Promise 实例。一个 Promise 实例有三种状态，分别是 pending、resolved 和 rejected，分别代表了进行中、已成功和已失败。实例的状态只能由 pending 转变 resolved 或者 rejected 状态，并且状态一经改变，就凝固了，无法再被改变了。
 

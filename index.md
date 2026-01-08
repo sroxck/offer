@@ -15,7 +15,7 @@ hero:
       link: /about/
     - theme: alt
       text: 知识笔记集锦
-      link: /api-examples
+      link: /
 
 features:
   - icon: 😍

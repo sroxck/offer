@@ -1,5 +1,11 @@
 # Vue 高级面试题
 
+## vue3 都有那些宏
+
+## script setup 是什么
+
+## vue3 事件总线怎么用
+
 ## cjs 和 esm 的区别
 
 ## 说说从 template 到 render 处理过程

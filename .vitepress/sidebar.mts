@@ -6,12 +6,16 @@ export default [
     items: [{ text: "关于本站", link: "/about" }],
   },
   {
-    text: "真实面试题",
-    items: [{ text: "xx公司", link: "/really/1.md" }],
-  },
-  {
-    text: "常规型面试题",
-    items: [{ text: "通用", link: "/outher.md" }],
+    text: "每日五题",
+    items: [
+      {text:'1月6日',link:'/every/1-6.md'},
+      { text: "1月7日", link: "/every/1-7.md" },
+      { text: "1月8日", link: "/every/1-8.md" },  
+      { text: "1月9日", link: "/every/1-9.md" },
+      // { text: "1月10日", link: "/every/1-10.md" },
+      // { text: "1月11日", link: "/every/1-11.md" },
+      // { text: "1月12日", link: "/every/1-12.md" },
+    ]
   },
   {
     text: "基础阶段",
@@ -114,6 +118,22 @@ export default [
       //   ],
       // },
     ],
+  },
+  {
+    text: "真实面试题",
+    items: [{ text: "xx公司", link: "/really/1.md" }],
+  },
+  {
+    text: "项目面试题",
+    items: [{ text: "通用", link: "/project.md" }],
+  },
+  {
+    text: "常规型面试题",
+    items: [{ text: "通用", link: "/outher.md" }],
+  },
+  {
+    text: "手写/机试面试题",
+    items: [{ text: "通用", link: "/write/index.md" }],
   },
   {
     text: "源码篇",
