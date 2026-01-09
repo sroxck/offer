@@ -1,8 +1,7 @@
 node_modules
+.vitepress/dist
 .vitepress/cache
 .vercel
-.vitepress/dist/*
-# npm
 package-lock.json
 node_modules
 
